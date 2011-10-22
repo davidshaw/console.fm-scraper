@@ -89,6 +89,7 @@ open(target) do |p|
       					f.write(open(location, "Cookie" => p.meta['set-cookie']).read)
 				rescue
 					puts "[!] ERROR -- deleting empty file #{name}.mp3"
+					f.close
 					File.delete("#{dir}/#{name}.mp3")
 					next
 				end
